@@ -1,0 +1,161 @@
+/* Premium Study Assistant Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --primary: #6366f1; /* Indigo */
+    --secondary: #10b981; /* Emerald/Teal */
+    --bg-dark: #0f172a;
+    --bg-light: #f8fafc;
+    --text-primary-dark: #f8fafc;
+    --text-primary-light: #1e293b;
+    --text-muted: #94a3b8;
+    --card-bg-dark: #1e293b;
+    --card-bg-light: #ffffff;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+/* Theme classes */
+.stApp.light-mode {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: var(--text-primary-light);
+}
+
+.stApp.dark-mode {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    color: var(--text-primary-dark);
+}
+
+.stApp {
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Sidebar Styling */
+section[data-testid="stSidebar"] {
+    backdrop-filter: blur(10px);
+}
+
+/* Login Overlay */
+.login-container {
+    max-width: 450px;
+    margin: 5rem auto;
+    padding: 3rem;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.75rem;
+    border-radius: 12px;
+    background: white;
+    color: #1e293b;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: all 0.2s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.social-btn:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+/* Dashboard Header */
+.header-container {
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #818cf8, #34d399);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+/* Chat Message Styling */
+.stApp.dark-mode .stChatMessage {
+    background-color: var(--card-bg-dark) !important;
+    color: white !important;
+}
+
+.stApp.light-mode .stChatMessage {
+    background-color: var(--card-bg-light) !important;
+    color: #1e293b !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+.stChatMessage {
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.stChatMessage:hover {
+    transform: translateY(-2px);
+    border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Mode Badge Styling */
+.mode-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.mode-normal { background-color: rgba(99, 102, 241, 0.2); color: #818cf8; }
+.mode-simple { background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+.mode-example { background-color: rgba(16, 185, 129, 0.2); color: #34d399; }
+
+/* Custom Inputs */
+div[data-baseweb="textarea"], div[data-baseweb="input"] {
+    background-color: rgba(15, 23, 42, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
